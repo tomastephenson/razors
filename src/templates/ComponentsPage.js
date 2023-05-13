@@ -11,15 +11,22 @@ import Popup from '../components/Popup'
 // Export Template for use in CMS preview
 export const ComponentsPageTemplate = ({
   section1,
+  section2,
   video,
   videoPoster,
   videoTitle,
-  section2,
-  gallery
   accordion,
   body,
+  gallery
 }) => (
   <main>
+
+        <section className="BackgroundVideo-section section">
+      <BackgroundVideo poster={videoPoster} videoTitle={videoTitle}>
+        {video && <source src={video} type="video/mp4" />}
+      </BackgroundVideo>
+    </section>
+
 
     <section className="section">
       <div className="container">
@@ -27,22 +34,16 @@ export const ComponentsPageTemplate = ({
       </div>
     </section>
 
-    <section className="BackgroundVideo-section section">
-      <BackgroundVideo poster={videoPoster} videoTitle={videoTitle}>
-        {video && <source src={video} type="video/mp4" />}
-      </BackgroundVideo>
-    </section>
-
     <section className="section">
       <div className="container">
-        <Content source={section2} />
+        <h2>Our gallery component</h2>
+        <Gallery images={gallery} />
       </div>
     </section>
 
     <section className="section">
       <div className="container">
-        <h2>Our products</h2>
-        <Gallery images={gallery} />
+        <Content source={section2} />
       </div>
     </section>
 
