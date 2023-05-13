@@ -11,6 +11,7 @@ import Popup from '../components/Popup'
 // Export Template for use in CMS preview
 export const ComponentsPageTemplate = ({
   section1,
+  video,
   videoPoster,
   videoTitle,
   section2,
